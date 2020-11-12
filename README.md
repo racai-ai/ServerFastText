@@ -4,13 +4,16 @@ In this repository is an addition to Facebook's FastText allowing pre-loading of
 
 # Compile
 
-Run "make" or "make fasttext-static". Will create a "build" directory for the intermediate files.
+Run "make" or "make fasttext-static". Will create a "build" directory for the intermediate files. 
+Alternatively you can try the pre-compiled "fasttext-static" binary from this repository.
 
 # Run
 
 Keeps all the FastText command line options and adds an additional parameter "server".
 
 > ./fasttext server <model_file.bin> <port>
+
+The server will always listen on localhost. We don't recommend exposing this implementation directly in the Internet. Instead implement a front-end in a web language, like PHP, which sanitizes user requests before forwarding them to the server. The "test" folder contains some PHP scripts.
 
 # APIs
 

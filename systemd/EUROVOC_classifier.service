@@ -1,0 +1,16 @@
+[Unit]
+Description=EUROVOC Classifier
+After=network.target auditd.service
+
+[Service]
+ExecStart=/data/EUROVOC_Classifier/fasttext server eurovoc.ro.bin 8201
+WorkingDirectory=/data/EUROVOC_Classifier
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+

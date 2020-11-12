@@ -1,0 +1,7 @@
+Copy the service file in /etc/systemd/system folder.
+
+systemctl enable EUROVOC_Classifier.service
+
+systemctl start EUROVOC_Classifier.service
+
+systemctl status EUROVOC_Classifier.service
